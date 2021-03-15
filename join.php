@@ -35,11 +35,11 @@
 </head>
 <body style ="background-color:rgb(63, 192, 235);">
 
-<h1 class = "text"><b style="font-family: Arial"><i style ="color:white">How Many Players?</i></b></h1>
+<h1 class = "text"><b style="font-family: Arial"><i style ="color:white">Enter A Game Code</i></b></h1>
 
 <input class = "input", type="number">
 
-<button class = "button", type="button", style ="background-color:rgb(47, 126, 212);"><i>Start</i></button>
+<button class = "button", type="button", style ="background-color:rgb(47, 126, 212);"><i>Join</i></button>
 
 <h1 class = "text"><b style="font-family: Arial"><i style ="color:white">DiscSync</i></b></h1>
 
