@@ -23,10 +23,18 @@ echo "<html><body>
 
     <button class = \"button\" type=\"submit\" name=\"submit\"><i>Start</i></form>";
 
+$id = 1;
 $num = $_POST['players'];
 
-$sql = "INSERT INTO match (numPlayers)
-VALUES ($num)";
+//$sql = "INSERT INTO match (numPlayers)
+//VALUES ($num)";
+
+if (isset($_POST['submit'])) {
+
+    $sql = "insert into matches(matchID, numPlayers) values('{$id}','{$num}')";
+    $result = $conn->query($sql);
+}
+
 ?>
 
 <h1 class = "h1"><b style="font-family: Arial"><i style ="color:white">DiscSync</i></b></h1>

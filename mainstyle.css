@@ -22,7 +22,6 @@
 
 .input {
     border: none;
-    color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -31,4 +30,10 @@
     cursor: pointer;
     width: 200px;
     margin: 15px auto auto;
+}
+
+.table, .tr, .td, .th {
+    border: 1px solid white;
+    color: white;
+    align-content: center;
 }
