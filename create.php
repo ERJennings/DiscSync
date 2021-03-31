@@ -1,3 +1,15 @@
+<?php
+$dbhost = $_SERVER['discsync2.cyudrahusm5z.us-east-1.rds.amazonaws.com'];
+$dbport = $_SERVER['3306'];
+$dbname = $_SERVER['discsync2'];
+$charset = 'utf8' ;
+
+$dsn = "mysql:host={$dbhost};port={$dbport};dbname={$dbname};charset={$charset}";
+$username = $_SERVER['admin'];
+$password = $_SERVER['365DaOfAmTr'];
+
+$pdo = new PDO($dsn, $username, $password);
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
