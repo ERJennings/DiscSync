@@ -28,10 +28,19 @@ $num = $_POST['players'];
 
 //$sql = "INSERT INTO match (numPlayers)
 //VALUES ($num)";
+if (isset($_POST['submit'])) {
+
+    //$sql = "INSERT INTO 'matches'(matchID, numPlayers) VALUES('{$id}','{$num}')";
+
+    //$sql = "INSERT INTO 'matches'(numPlayers) VALUES({$num})";
+    //$result = $conn->query($sql);
+
+    $sql = "INSERT INTO matches(numPlayers) VALUES(\"$num\")";
+}
 
 if (isset($_POST['submit'])) {
 
-    $sql = "insert into matches(matchID, numPlayers) values('{$id}','{$num}')";
+    $sql = "INSERT INTO 'matches'(matchID, numPlayers) VALUES('{$id}','{$num}')";
     $result = $conn->query($sql);
 }
 
