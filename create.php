@@ -18,7 +18,7 @@ $conn = new mysqli('discsync2.cyudrahusm5z.us-east-1.rds.amazonaws.com',
 
 echo "<html><body>
 
-<form create=\"create.php\" method=\"post\">
+    <form create=\"create.php\" method=\"post\">
 
     <input class = \"input\" type=\"number\" name=\"players\">
 
@@ -42,6 +42,8 @@ $num = $_POST['players'];
 //}
 
 if (isset($_POST['players'])) {
+
+    //$num = $_POST['players'];
 
     $sql = "INSERT INTO matches(numPlayers) VALUES(\"$num\")";
     $result = $conn->query($sql);
