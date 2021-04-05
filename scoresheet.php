@@ -198,156 +198,156 @@ echo "<html>
     <!--Fifth Row-->
     <tr class = \"tr\">
         <th>5</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par5\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h5\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h5\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h5\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h5\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h5\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h5\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par5\" value = $hole5scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h5\" value = $hole5scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h5\" value = $hole5scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h5\" value = $hole5scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h5\" value = $hole5scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h5\" value = $hole5scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h5\" value = $hole5scores[6]></td>
     </tr>
     <!--Sixth Row-->
     <tr class = \"tr\">
         <th>6</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par6\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h6\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h6\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h6\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h6\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h6\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h6\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par6\" value = $hole6scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h6\" value = $hole6scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h6\" value = $hole6scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h6\" value = $hole6scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h6\" value = $hole6scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h6\" value = $hole6scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h6\" value = $hole6scores[6]></td>
     </tr>
     <!--Seventh Row-->
     <tr class = \"tr\">
         <th>7</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par7\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h7\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h7\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h7\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h7\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h7\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h7\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par7\" value = $hole7scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h7\" value = $hole7scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h7\" value = $hole7scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h7\" value = $hole7scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h7\" value = $hole7scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h7\" value = $hole7scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h7\" value = $hole7scores[6]></td>
     </tr>
     <!--Eighth Row-->
     <tr class = \"tr\">
         <th>8</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par8\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h8\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h8\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h8\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h8\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h8\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h8\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par8\" value = $hole8scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h8\" value = $hole8scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h8\" value = $hole8scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h8\" value = $hole8scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h8\" value = $hole8scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h8\" value = $hole8scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h8\" value = $hole8scores[6]></td>
     </tr>
     <!--Ninth Row-->
     <tr class = \"tr\">
         <th>9</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par9\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h9\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h9\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h9\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h9\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h9\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h9\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par9\" value = $hole9scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h9\" value = $hole9scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h9\" value = $hole9scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h9\" value = $hole9scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h9\" value = $hole9scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h9\" value = $hole9scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h9\" value = $hole9scores[6]></td>
     </tr>
     <!--Tenth Row-->
     <tr class = \"tr\">
         <th>10</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par10\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h10\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h10\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h10\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h10\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h10\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h10\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par10\" value = $hole10scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h10\" value = $hole10scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h10\" value = $hole10scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h10\" value = $hole10scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h10\" value = $hole10scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h10\" value = $hole10scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h10\" value = $hole10scores[6]></td>
     </tr>
     <!--Eleventh Row-->
     <tr class = \"tr\">
         <th>11</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par11\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h11\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h11\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h11\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h11\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h11\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h11\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par11\" value = $hole11scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h11\" value = $hole11scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h11\" value = $hole11scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h11\" value = $hole11scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h11\" value = $hole11scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h11\" value = $hole11scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h11\" value = $hole11scores[6]></td>
     </tr>
     <!--Twelfth Row-->
     <tr class = \"tr\">
         <th>12</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par12\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h12\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h12\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h12\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h12\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h12\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h12\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par12\" value = $hole12scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h12\" value = $hole12scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h12\" value = $hole12scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h12\" value = $hole12scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h12\" value = $hole12scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h12\" value = $hole12scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h12\" value = $hole12scores[6]></td>
     </tr>
     <!--Thirteenth Row-->
     <tr class = \"tr\">
         <th>13</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par13\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h13\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h13\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h13\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h13\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h13\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h13\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par13\" value = $hole13scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h13\" value = $hole13scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h13\" value = $hole13scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h13\" value = $hole13scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h13\" value = $hole13scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h13\" value = $hole13scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h13\" value = $hole13scores[6]></td>
     </tr>
     <!--Fourteenth Row-->
     <tr class = \"tr\">
         <th>14</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par14\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h14\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h14\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h14\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h14\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h14\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h14\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par14\" value = $hole14scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h14\" value = $hole14scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h14\" value = $hole14scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h14\" value = $hole14scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h14\" value = $hole14scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h14\" value = $hole14scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h14\" value = $hole14scores[6]></td>
     </tr>
     <!--Fifteenth Row-->
     <tr class = \"tr\">
         <th>15</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par15\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h15\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h15\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h15\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h15\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h15\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h15\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par15\" value = $hole15scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h15\" value = $hole15scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h15\" value = $hole15scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h15\" value = $hole15scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h15\" value = $hole15scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h15\" value = $hole15scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h15\" value = $hole15scores[6]></td>
     </tr>
     <!--Sixteenth Row-->
     <tr class = \"tr\">
         <th>16</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par16\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h16\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h16\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h16\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h16\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h16\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h16\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par16\" value = $hole16scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h16\" value = $hole16scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h16\" value = $hole16scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h16\" value = $hole16scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h16\" value = $hole16scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h16\" value = $hole16scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h16\" value = $hole16scores[6]></td>
     </tr>
     <!--Seventeenth Row-->
     <tr class = \"tr\">
         <th>17</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par17\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h17\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h17\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h17\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h17\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h17\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h17\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par17\" value = $hole17scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h17\" value = $hole17scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h17\" value = $hole17scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h17\" value = $hole17scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h17\" value = $hole17scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h17\" value = $hole17scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h17\" value = $hole17scores[6]></td>
     </tr>
     <!--Eighteenth Row-->
     <tr class = \"tr\">
         <th>18</th>
-        <td><input class = \"cell\" type=\"number\" name=\"par18\"></td>
-        <td><input class = \"cell\" type=\"number\" name=\"p1h18\"></td>
-        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h18\"></td>
-        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h18\"></td>
-        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h18\"></td>
-        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h18\"></td>
-        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h18\"></td>
+        <td><input class = \"cell\" type=\"number\" name=\"par18\" value = $hole18scores[0]></td>
+        <td><input class = \"cell\" type=\"number\" name=\"p1h18\" value = $hole18scores[1]></td>
+        <td <?php echo $style2;?><input class = \"cell\" type=\"number\" name=\"p2h18\" value = $hole18scores[2]></td>
+        <td <?php echo $style3;?><input class = \"cell\" type=\"number\" name=\"p3h18\" value = $hole18scores[3]></td>
+        <td <?php echo $style4;?><input class = \"cell\" type=\"number\" name=\"p4h18\" value = $hole18scores[4]></td>
+        <td <?php echo $style5;?><input class = \"cell\" type=\"number\" name=\"p5h18\" value = $hole18scores[5]></td>
+        <td <?php echo $style6;?><input class = \"cell\" type=\"number\" name=\"p6h18\" value = $hole18scores[6]></td>
     </tr>
     <!--Totals-->
     <tr class = \"tr\">

@@ -28,6 +28,12 @@ echo "<html><body class = \"body\">
 
 $gameID = $_POST['id'];
 
+if (isset($_POST['id'])) {
+
+    header("Location: scoresheet.php");
+
+}
+
 ?>
 
 <h1 class = "h1"><b style="font-family: Arial"><i style ="color:white">DiscSync</i></b></h1>
