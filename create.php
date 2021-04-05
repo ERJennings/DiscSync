@@ -11,9 +11,11 @@
 
 <?php
 
+//Connect to DB
 $conn = new mysqli('discsync2.cyudrahusm5z.us-east-1.rds.amazonaws.com',
     'admin', '365DaOfAmTr', 'discsyncdb', '3306');
 
+//Form for inputting number of players
 echo "<html><body class = \"body\">
 
     <form create=\"create.php\" method=\"post\">
@@ -26,9 +28,9 @@ echo "<html><body class = \"body\">
 
 //PROBLEM SEEMS TO BE IN THIS LINE
 //Unclear why it won't assign the input to the variable
-
 $num = $_POST['players'];
 
+//Add new match to DB
 if (isset($_POST['players'])) {
 
     $sql = "INSERT INTO matches(numPlayers) VALUES(\"$num\")";

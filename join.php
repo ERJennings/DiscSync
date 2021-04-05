@@ -11,9 +11,11 @@
 
 <?php
 
+//Connect to DB
 $conn = new mysqli('discsync2.cyudrahusm5z.us-east-1.rds.amazonaws.com',
     'admin', '365DaOfAmTr', 'discsyncdb', '3306');
 
+//Form to get game ID
 echo "<html><body class = \"body\">
 
 <form join=\"join.php\" method=\"post\">
