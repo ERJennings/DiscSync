@@ -44,7 +44,33 @@ if (isset($_POST['players'])) {
         echo "ERROR: Match database may be offline";
     }
 
-    //header("Location: scoresheet.php");
+
+    $sql3 = mysqli_query($conn, "SELECT MAX(playerID) AS max FROM `player`;");
+    $res2 = mysqli_fetch_array($sql3);
+    $nextPlayerID = $res2['max'] + 1;
+
+    $sqlPar = "INSERT INTO player(playerID, matchID, playerName) VALUES(\"$nextPlayerID\", \"$nextID\", \"Par\")";
+    mysqli_query($conn, $sqlPar);
+
+    //echo "Par added";
+
+    for ($x = 0; $x < $num; $x++) {
+        $pName = "P" . ($x+1);
+        $nextPlayerID += 1;
+        $sqlLoop = "INSERT INTO player(playerID, matchID, playerName) VALUES(\"$nextPlayerID\", \"$nextID\", \"$pName\")";
+        if (mysqli_query($conn, $sqlLoop)) {
+            //echo $pName . "Added";
+        }
+        else {
+            echo "ERROR: Match database may be offline";
+        }
+    }
+
+    //Set match ID in cookie
+    $cookie_name = "DiscSyncMatchID";
+    setcookie($cookie_name, $nextID, time() + (86400 * 30), "/"); // 86400 = 1 day
+
+    header("Location: scoresheet.php");
 
 }
 

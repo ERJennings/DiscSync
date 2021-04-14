@@ -26,9 +26,15 @@ echo "<html><body class = \"body\">
 
     <button class = \"button\" type=\"submit\" name=\"submit\"><i>Start</i></form>";
 
-$gameID = $_POST['id'];
+
 
 if (isset($_POST['id'])) {
+
+    $gameID = $_POST['id'];
+
+    //Set match ID in cookie
+    $cookie_name = "DiscSyncMatchID";
+    setcookie($cookie_name, $gameID, time() + (86400 * 30), "/"); // 86400 = 1 day
 
     header("Location: scoresheet.php");
 

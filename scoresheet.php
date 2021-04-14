@@ -13,7 +13,8 @@ $conn = new mysqli('discsync2.cyudrahusm5z.us-east-1.rds.amazonaws.com',
     'admin', '365DaOfAmTr', 'discsyncdb', '3306');
 
 //Temporary, will be correctly determined later
-$gameID = 2;
+$cookie_name = "DiscSyncMatchID";
+$gameID = $_COOKIE[$cookie_name];
 
 //Get number of players for match
 $sql = "SELECT matchID, numPlayers FROM matches WHERE matchID=$gameID";
