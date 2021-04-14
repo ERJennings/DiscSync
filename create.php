@@ -26,17 +26,25 @@ echo "<html><body class = \"body\">
 
     <button class = \"button\" type=\"submit\" name=\"submit\"><i>Start</i></form>";
 
-//PROBLEM SEEMS TO BE IN THIS LINE
-//Unclear why it won't assign the input to the variable
-$num = $_POST['players'];
-
 //Add new match to DB
 if (isset($_POST['players'])) {
 
-    $sql = "INSERT INTO matches(numPlayers) VALUES(\"$num\")";
-    $result = $conn->query($sql);
+    $num = $_POST['players'];
 
-    header("Location: scoresheet.php");
+    $sql2 = mysqli_query($conn, "SELECT MAX(matchID) AS max FROM `matches`;");
+    $res = mysqli_fetch_array($sql2);
+    $nextID = $res['max'] + 1;
+
+    $sql = "INSERT INTO matches(matchID, numPlayers) VALUES(\"$nextID\", \"$num\")";
+    //$result = $conn->query($sql);
+    if(mysqli_query($conn, $sql)){
+        echo "Starting match...";
+    }
+    else{
+        echo "ERROR: Match database may be offline";
+    }
+
+    //header("Location: scoresheet.php");
 
 }
 
