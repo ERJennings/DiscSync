@@ -33,6 +33,10 @@ $mainArray = array(
 
 while ($scoreData[] = mysqli_fetch_assoc($resultdata));
 
+//In testing
+$playerIDArray = array_column($scoreData, 'playerID');
+//End
+
 $mainArray[0]= array_column($scoreData, 'playerName');
 $mainArray[1] = array_column($scoreData, 'score1');
 $mainArray[2] = array_column($scoreData, 'score2');
@@ -236,6 +240,71 @@ echo "<html>
     <br> <p>
 
     <button class = \"button\" type=\"submit\" name=\"submit\"><i>Update</i></form>";
+
+//    function updateScore($playerIDs, $oldScores, $dbconn) {
+//        if (!$_POST['p1h1'] == $oldScores[1][1]) {
+//            $testQuery = "UPDATE player SET score1=2 WHERE playerID=$playerIDs[1]";
+//            if ($dbconn->query($testQuery) === TRUE) {
+//                echo "Record updated successfully";
+//            } else {
+//                echo "Error updating record: " . $dbconn->error;
+//            }
+//        }
+//    }
+//    updateScore($playerIDArray, $mainArray, $conn);
+
+if (isset($_POST['p1'])) {
+
+    $values = array_values($_POST);
+    $nameArray = array();
+    $scoreArray = array();
+    $currentIndex = 0;
+
+    for ($i = 0; $i < $numPlayers; $i++) {
+        $nameArray[$i] = $values[$currentIndex];
+        $currentIndex++;
+    }
+
+    for ($i = 0; $i < 18; $i++) {
+        $newRow = array();
+        for ($j = 0; $j <= $numPlayers; $j++) {
+            //$newRow = array();
+            $newRow[$j] = $values[$currentIndex];
+            $currentIndex++;
+        }
+        $scoreArray[$i] = $newRow;
+    }
+    //for ($i = 0; $i < $numPlayers; $i++) {
+        //echo $nameArray[$i];
+    //}
+
+    for ($y = 0; $y < $numPlayers; $y++) {
+        $newName = $nameArray[$y];
+        //echo $newName . " " . $mainArray[0][$y+1];
+        if ($newName != $mainArray[0][$y+1]){
+            //echo $newName . " " . $mainArray[0][$y+1];
+            $currentID = $playerIDArray[$y+1];
+            //echo $currentID;
+            $nameString = "UPDATE player SET playerName='$newName' WHERE playerID=$currentID";
+            //$conn->query($nameString);
+            if ($conn->query($nameString) === TRUE) {
+                echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . $conn->error;
+            }
+        }
+    }
+    //header("Location: scoresheet.php");
+    //header("Refresh:0");
+
+//    for ($i = 0; $i < 18; $i++) {
+//        for ($j = 0; $j <= $numPlayers; $j++) {
+//            echo "(" . $i  . "," . $j . ")";
+//            echo $scoreArray[$i][$j];
+//        }
+//        echo "\n";
+//    }
+}
 
 ?>
 
