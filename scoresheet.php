@@ -280,20 +280,36 @@ if (isset($_POST['p1'])) {
 
     for ($y = 0; $y < $numPlayers; $y++) {
         $newName = $nameArray[$y];
-        //echo $newName . " " . $mainArray[0][$y+1];
         if ($newName != $mainArray[0][$y+1]){
-            //echo $newName . " " . $mainArray[0][$y+1];
             $currentID = $playerIDArray[$y+1];
-            //echo $currentID;
             $nameString = "UPDATE player SET playerName='$newName' WHERE playerID=$currentID";
-            //$conn->query($nameString);
             if ($conn->query($nameString) === TRUE) {
-                echo "Record updated successfully";
+                //echo "Record updated successfully";
             } else {
                 echo "Error updating record: " . $conn->error;
             }
         }
     }
+
+    for ($y = 0; $y < 18; $y++) {
+        for ($z = 0; $z <= $numPlayers; $z++) {
+            $newScore = $scoreArray[$y][$z];
+            if ($mainArray[$y+1][$z] != $newScore) {
+                $currentID = $playerIDArray[$z];
+                $holeNum = $y+1;
+                $holeName = "score". $holeNum;
+                $scoreString = "UPDATE player SET $holeName='$newScore' WHERE playerID=$currentID";
+                if ($conn->query($scoreString) === TRUE) {
+                    //echo "Record updated successfully";
+                } else {
+                    echo "Error updating record: " . $conn->error;
+                }
+            }
+        }
+    }
+
+    $URL="scoresheet.php";
+    echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
     //header("Location: scoresheet.php");
     //header("Refresh:0");
 
