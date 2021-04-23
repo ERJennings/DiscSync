@@ -25,7 +25,7 @@ echo "<html><body class = \"body\">
 
     <form create=\"create.php\" method=\"post\">
 
-    <input class = \"input\" type=\"number\" name=\"players\">
+    <input class = \"input\" type=\"number\" min=\"1\" max=\"6\" name=\"players\" placeholder=\"1-6 Players\">
 
     <br> <p>
 

@@ -25,7 +25,7 @@ echo "<html><body class = \"body\">
 
 <form join=\"join.php\" method=\"post\">
 
-    <input class = \"input\" type=\"number\" name=\"id\">
+    <input class = \"input\" type=\"number\" min=\"1\" name=\"id\" placeholder=\"Ex: 32\">
 
     <br> <p>
 

@@ -128,11 +128,11 @@ for ($x = 2; $x <= $numPlayers; $x++) {
 function rowGenerator($rn, $playerCount, $dataArray) {
     $buildRow = "<th>$rn</th>";
     $parName = "par" . $rn;
-    $buildRow = $buildRow . "<td><input class = \"cell\" type=\"number\" name=\"$parName\" value = {$dataArray[$rn][0]}></td>";
+    $buildRow = $buildRow . "<td><input class = \"cell\" type=\"number\" min=\"1\" name=\"$parName\" value = {$dataArray[$rn][0]}></td>";
 
     for ($x = 1; $x <= $playerCount; $x++) {
         $scoreName = "p".$x."h".$rn;
-        $buildRow = $buildRow . "<td><input class = \"cell\" type=\"number\" name=\"$scoreName\" value = {$dataArray[$rn][$x]}></td>";
+        $buildRow = $buildRow . "<td><input class = \"cell\" type=\"number\" min=\"1\" name=\"$scoreName\" value = {$dataArray[$rn][$x]}></td>";
     }
     return $buildRow;
 }
