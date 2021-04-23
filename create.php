@@ -14,7 +14,6 @@ session_start();
 <h1 class = "h1"><b style="font-family: Arial"><i style ="color:white">How Many Players?</i></b></h1>
 
 <?php
-//$_SESSION["rf"] = "no";
 $_SESSION["oldMain"] = array();
 
 //Connect to DB
@@ -42,7 +41,7 @@ if (isset($_POST['players'])) {
     $nextID = $res['max'] + 1;
 
     $sql = "INSERT INTO matches(matchID, numPlayers) VALUES(\"$nextID\", \"$num\")";
-    //$result = $conn->query($sql);
+
     if(mysqli_query($conn, $sql)){
         echo "Starting match...";
     }
@@ -50,15 +49,12 @@ if (isset($_POST['players'])) {
         echo "ERROR: Match database may be offline";
     }
 
-
     $sql3 = mysqli_query($conn, "SELECT MAX(playerID) AS max FROM `player`;");
     $res2 = mysqli_fetch_array($sql3);
     $nextPlayerID = $res2['max'] + 1;
 
     $sqlPar = "INSERT INTO player(playerID, matchID, playerName) VALUES(\"$nextPlayerID\", \"$nextID\", \"Par\")";
     mysqli_query($conn, $sqlPar);
-
-    //echo "Par added";
 
     for ($x = 0; $x < $num; $x++) {
         $pName = "P" . ($x+1);
@@ -75,8 +71,6 @@ if (isset($_POST['players'])) {
     //Set match ID in cookie
     $cookie_name = "DiscSyncMatchID";
     setcookie($cookie_name, $nextID, time() + (86400 * 30), "/"); // 86400 = 1 day
-
-    //setcookie("DiscSyncRF", "no", time() + (86400 * 30), "/");
 
     //$conn->close();
 

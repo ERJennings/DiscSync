@@ -243,14 +243,14 @@ if (isset($_POST['submit'])) {
 
     for ($y = 1; $y < 18; $y++) {
         for ($z = 0; $z <= $numPlayers; $z++) {
-            //$newScore = $scoreArray[$y][$z];
-            //$oldScore = $mainArray[$y+1][$z];
+
             if ($z == 0) {
                 $currentField = "par" . $y;
             }
             else {
                 $currentField = "p" . $z . "h" . $y;
             }
+
             $currentData = $_POST[$currentField];
             $currentPlayer = $playerIDArray[$z];
 

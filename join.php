@@ -14,8 +14,6 @@ session_start();
 <h1 class = "h1"><b style="font-family: Arial"><i style ="color:white">Enter a Game ID</i></b></h1>
 
 <?php
-
-$_SESSION["rf"] = "no";
 $_SESSION["oldMain"] = array();
 
 //Connect to DB
@@ -42,8 +40,6 @@ if (isset($_POST['id'])) {
     //Set match ID in cookie
     $cookie_name = "DiscSyncMatchID";
     setcookie($cookie_name, $gameID, time() + (86400 * 30), "/"); // 86400 = 1 day
-
-    //setcookie("DiscSyncRF", "no", time() + (86400 * 30), "/");
 
     //$conn->close();
 
