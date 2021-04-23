@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,6 +14,9 @@
 <h1 class = "h1"><b style="font-family: Arial"><i style ="color:white">Enter a Game ID</i></b></h1>
 
 <?php
+
+$_SESSION["rf"] = "no";
+//
 
 //Connect to DB
 $conn = new mysqli('discsync2.cyudrahusm5z.us-east-1.rds.amazonaws.com',
@@ -35,6 +42,10 @@ if (isset($_POST['id'])) {
     //Set match ID in cookie
     $cookie_name = "DiscSyncMatchID";
     setcookie($cookie_name, $gameID, time() + (86400 * 30), "/"); // 86400 = 1 day
+
+    //setcookie("DiscSyncRF", "no", time() + (86400 * 30), "/");
+
+    //$conn->close();
 
     header("Location: scoresheet.php");
 

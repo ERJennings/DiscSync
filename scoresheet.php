@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +11,22 @@
 <body class = "body" style ="background-color:rgb(63, 192, 235);">
 
 <?php
+
+if ($_SESSION["rf"] == "yes") {
+    $_SESSION["rf"] = "no";
+    $URL="scoresheet.php";
+    echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
+}
+
+//$cont = true;
+
+//$RF = $_COOKIE["DiscSyncRF"];
+//if ($RF == "yes") {
+//    setcookie("DiscSyncRF", "no", time() + (86400 * 30), "/");
+//    $URL="scoresheet.php";
+//    echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
+//}
+
 //Connect to DB
 $conn = new mysqli('discsync2.cyudrahusm5z.us-east-1.rds.amazonaws.com',
     'admin', '365DaOfAmTr', 'discsyncdb', '3306');
@@ -27,15 +46,11 @@ $sqldata = "SELECT playerID, matchID, playerName, score1, score2,
         score13, score14, score15, score16, score17, score18 FROM player WHERE matchID=$gameID";
 $resultdata = $conn->query($sqldata);
 
-$mainArray = array(
-
-);
+$mainArray = array();
 
 while ($scoreData[] = mysqli_fetch_assoc($resultdata));
 
-//In testing
 $playerIDArray = array_column($scoreData, 'playerID');
-//End
 
 $mainArray[0]= array_column($scoreData, 'playerName');
 $mainArray[1] = array_column($scoreData, 'score1');
@@ -96,13 +111,6 @@ if($numPlayers == 6) {
     $p6OverUnder = getOverUnder($p6total, $totalPar);
 }
 
-//Make sure correct number of columns appear
-//$style2 = "";
-//$style3 = "";
-//$style4 = "";
-//$style5 = "";
-//$style6 = "";
-
 //Determine player's +/- score
 function getOverUnder($playerTotal, $coursePar){
     $temp = $playerTotal - $coursePar;
@@ -116,23 +124,6 @@ function getOverUnder($playerTotal, $coursePar){
         return $temp;
     }
 }
-
-
-//if($numPlayers < 6){
-//    $style6 = "style='display:none;'";
-//}
-//if($numPlayers < 5){
-//    $style5 = "style='display:none;'";
-//}
-//if($numPlayers < 4){
-//    $style4 = "style='display:none;'";
-//}
-//if($numPlayers < 3){
-//    $style3 = "style='display:none;'";
-//}
-//if($numPlayers < 2){
-//    $style2 = "style='display:none;'";
-//}
 
 //Construct header row as it does not follow the usual formula
 $namerow = "
@@ -253,11 +244,64 @@ echo "<html>
 //    }
 //    updateScore($playerIDArray, $mainArray, $conn);
 
+//$_POST = array();
+//$test = false;
 if (isset($_POST['p1'])) {
 
+    echo $_POST['p1'];
+    $_SESSION["rf"] = "yes";
+
+    //$test = true;
+
+    //echo "WORDS";
+
+    //BEGIN TEST
+//    $refreshReq = "SELECT playerID, matchID, playerName, score1, score2,
+//       score3, score4, score5, score6, score7, score8, score9, score10, score11, score12,
+//        score13, score14, score15, score16, score17, score18 FROM player WHERE matchID=$gameID";
+//    $updatedData = $conn->query($refreshReq);
+//
+//    $newArray = array();
+//
+//    while ($refreshData[] = mysqli_fetch_assoc($updatedData));
+//
+//    $newArray[0]= array_column($refreshData, 'playerName');
+//    $newArray[1] = array_column($refreshData, 'score1');
+//    $newArray[2] = array_column($refreshData, 'score2');
+//    $newArray[3] = array_column($refreshData, 'score3');
+//    $newArray[4] = array_column($refreshData, 'score4');
+//    $newArray[5] = array_column($refreshData, 'score5');
+//    $newArray[6] = array_column($refreshData, 'score6');
+//    $newArray[7] = array_column($refreshData, 'score7');
+//    $newArray[8] = array_column($refreshData, 'score8');
+//    $newArray[9] = array_column($refreshData, 'score9');
+//    $newArray[10] = array_column($refreshData, 'score10');
+//    $newArray[11] = array_column($refreshData, 'score11');
+//    $newArray[12] = array_column($refreshData, 'score12');
+//    $newArray[13] = array_column($refreshData, 'score13');
+//    $newArray[14] = array_column($refreshData, 'score14');
+//    $newArray[15] = array_column($refreshData, 'score15');
+//    $newArray[16] = array_column($refreshData, 'score16');
+//    $newArray[17] = array_column($refreshData, 'score17');
+//    $newArray[18] = array_column($refreshData, 'score18');
+    //END TEST
+
+    //$_POST = array();
     $values = array_values($_POST);
+    //$_SESSION["oldPost"] = $values;
+
+    //TEST
+    $newPost = array();
+    //END TEST
+
+//    foreach ($values as $val) {
+//        echo $val;
+//    }
+    //$_POST = array();
+    //unset($_POST);
     $nameArray = array();
     $scoreArray = array();
+    //$statementsArray = array();
     $currentIndex = 0;
 
     for ($i = 0; $i < $numPlayers; $i++) {
@@ -273,6 +317,7 @@ if (isset($_POST['p1'])) {
             $currentIndex++;
         }
         $scoreArray[$i] = $newRow;
+        //if ($scoreArray[$i][$j] == )
     }
     //for ($i = 0; $i < $numPlayers; $i++) {
         //echo $nameArray[$i];
@@ -280,11 +325,12 @@ if (isset($_POST['p1'])) {
 
     for ($y = 0; $y < $numPlayers; $y++) {
         $newName = $nameArray[$y];
-        if ($newName != $mainArray[0][$y+1]){
+        $oldName = $mainArray[0][$y+1];
+        if ($newName != $oldName){
             $currentID = $playerIDArray[$y+1];
             $nameString = "UPDATE player SET playerName='$newName' WHERE playerID=$currentID";
-            if ($conn->query($nameString) === TRUE) {
-                //echo "Record updated successfully";
+            if ($conn->query($nameString) == TRUE) {
+                echo "Record updated successfully";
             } else {
                 echo "Error updating record: " . $conn->error;
             }
@@ -294,22 +340,49 @@ if (isset($_POST['p1'])) {
     for ($y = 0; $y < 18; $y++) {
         for ($z = 0; $z <= $numPlayers; $z++) {
             $newScore = $scoreArray[$y][$z];
-            if ($mainArray[$y+1][$z] != $newScore) {
+            $oldScore = $mainArray[$y+1][$z];
+            //$updatedScore = $newArray[$y+1][$z];
+            if ($oldScore != $newScore) {
+
+                //$mainArray[$y+1][$z] == $newScore;
+                //$oldScore = $newScore;
+                echo "(" . $oldScore . " " . $newScore . ")";
                 $currentID = $playerIDArray[$z];
                 $holeNum = $y+1;
                 $holeName = "score". $holeNum;
-                $scoreString = "UPDATE player SET $holeName='$newScore' WHERE playerID=$currentID";
-                if ($conn->query($scoreString) === TRUE) {
-                    //echo "Record updated successfully";
+                //if ($updatedScore != $oldScore) {
+                    //$scoreString = "UPDATE player SET $holeName=$updatedScore WHERE playerID=$currentID";
+                //}
+                //else {
+                    $scoreString = "UPDATE player SET $holeName=$newScore WHERE playerID=$currentID";
+                //}
+
+                //$scoreArray[$y][$z] =$mainArray[$y+1][$z];
+                if ($conn->query($scoreString) == TRUE) {
+                    //$URL="scoresheet.php";
+                    //echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
                 } else {
                     echo "Error updating record: " . $conn->error;
                 }
+                //echo "(" . $oldScore . " " . $newScore . ")";
+                //echo $mainArray[$y+1][$z] . " " . $newScore;
             }
         }
     }
+    //$mainArray = $scoreArray;
+    //for($p = 0; $p < count($values); $p++) {
+    //}
+    //unset($mainArray);
+    //$_POST = $values;
+    //$mainArray = array();
+    //$nameArray = array();
+    //$scoreArray = array();
+
+    //$_POST = $_SESSION["oldPost"];
 
     $URL="scoresheet.php";
     echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
+
     //header("Location: scoresheet.php");
     //header("Refresh:0");
 
@@ -320,7 +393,13 @@ if (isset($_POST['p1'])) {
 //        }
 //        echo "\n";
 //    }
+    //$_POST = $_SESSION["oldPost"];
 }
+
+//if ($test == true) {
+//    setcookie("DiscSyncRF", "yes", time() + (86400 * 30), "/");
+//}
+//$conn->close();
 
 ?>
 
