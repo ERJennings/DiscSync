@@ -70,49 +70,92 @@ function columnTotal($colNum, $data) {
     return $result;
 }
 
+//START NEW
 $totalPar = columnTotal(0, $mainArray);
-
-$p1total = columnTotal(1, $mainArray);
-$p1OverUnder = getOverUnder($p1total, $totalPar);
-
+$p1OverUnder = getOverUnder(1, $mainArray);
 if($numPlayers >= 2) {
-    $p2total = columnTotal(2, $mainArray);;
-    $p2OverUnder = getOverUnder($p2total, $totalPar);
+    $p2OverUnder = getOverUnder(2, $mainArray);
 }
-
 if($numPlayers >= 3) {
-    $p3total = columnTotal(3, $mainArray);;
-    $p3OverUnder = getOverUnder($p3total, $totalPar);
+    $p3OverUnder = getOverUnder(3, $mainArray);
 }
-
 if($numPlayers >= 4) {
-    $p4total = columnTotal(4, $mainArray);;
-    $p4OverUnder = getOverUnder($p4total, $totalPar);
+    $p4OverUnder = getOverUnder(4, $mainArray);
 }
-
 if($numPlayers >= 5) {
-    $p5total = columnTotal(5, $mainArray);
-    $p5OverUnder = getOverUnder($p5total, $totalPar);
+    $p5OverUnder = getOverUnder(5, $mainArray);
 }
-
 if($numPlayers == 6) {
-    $p6total = columnTotal(6, $mainArray);
-    $p6OverUnder = getOverUnder($p6total, $totalPar);
+    $p6OverUnder = getOverUnder(6, $mainArray);
 }
 
-//Determine player's +/- score
-function getOverUnder($playerTotal, $coursePar){
-    $temp = $playerTotal - $coursePar;
-    if ($temp > 0) {
-        return "+".$temp;
+function getOverUnder($playerNum, $scoreArray) {
+    $result = 0;
+    for ($i = 1; $i <= 18; $i++) {
+        $holePar = $scoreArray[$i][0];
+        $holeScore = $scoreArray[$i][$playerNum];
+        if ($holePar > 0 and $holeScore > 0) {
+            $result += ((int)$holeScore-(int)$holePar);
+            //echo $holeScore . "-" . $holePar . "=" . $result;
+        }
     }
-    else if ($temp == 0) {
+    if ($result > 0) {
+        return "+".$result;
+    }
+    else if ($result == 0) {
         return "E";
     }
     else {
-        return $temp;
+        return $result;
     }
 }
+//END NEW
+
+//START OLD
+//$totalPar = columnTotal(0, $mainArray);
+//
+//$p1total = columnTotal(1, $mainArray);
+//$p1OverUnder = getOverUnder($p1total, $totalPar);
+//
+//if($numPlayers >= 2) {
+//    $p2total = columnTotal(2, $mainArray);;
+//    $p2OverUnder = getOverUnder($p2total, $totalPar);
+//}
+//
+//if($numPlayers >= 3) {
+//    $p3total = columnTotal(3, $mainArray);;
+//    $p3OverUnder = getOverUnder($p3total, $totalPar);
+//}
+//
+//if($numPlayers >= 4) {
+//    $p4total = columnTotal(4, $mainArray);;
+//    $p4OverUnder = getOverUnder($p4total, $totalPar);
+//}
+//
+//if($numPlayers >= 5) {
+//    $p5total = columnTotal(5, $mainArray);
+//    $p5OverUnder = getOverUnder($p5total, $totalPar);
+//}
+//
+//if($numPlayers == 6) {
+//    $p6total = columnTotal(6, $mainArray);
+//    $p6OverUnder = getOverUnder($p6total, $totalPar);
+//}
+//
+////Determine player's +/- score
+//function getOverUnder($playerTotal, $coursePar){
+//    $temp = $playerTotal - $coursePar;
+//    if ($temp > 0) {
+//        return "+".$temp;
+//    }
+//    else if ($temp == 0) {
+//        return "E";
+//    }
+//    else {
+//        return $temp;
+//    }
+//}
+//END OLD
 
 //Construct header row as it does not follow the usual formula
 $namerow = "
@@ -241,7 +284,7 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    for ($y = 1; $y < 18; $y++) {
+    for ($y = 1; $y <= 18; $y++) {
         for ($z = 0; $z <= $numPlayers; $z++) {
 
             if ($z == 0) {
