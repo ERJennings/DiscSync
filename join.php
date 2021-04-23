@@ -16,7 +16,7 @@ session_start();
 <?php
 
 $_SESSION["rf"] = "no";
-//
+$_SESSION["oldMain"] = array();
 
 //Connect to DB
 $conn = new mysqli('discsync2.cyudrahusm5z.us-east-1.rds.amazonaws.com',

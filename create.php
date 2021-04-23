@@ -14,8 +14,8 @@ session_start();
 <h1 class = "h1"><b style="font-family: Arial"><i style ="color:white">How Many Players?</i></b></h1>
 
 <?php
-$_SESSION["rf"] = "no";
-//$_SESSION["oldPost"] = array();
+//$_SESSION["rf"] = "no";
+$_SESSION["oldMain"] = array();
 
 //Connect to DB
 $conn = new mysqli('discsync2.cyudrahusm5z.us-east-1.rds.amazonaws.com',
