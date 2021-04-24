@@ -8,6 +8,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DiscSync</title>
     <link rel="stylesheet" href="mainstyle.css">
+    <link rel="icon" href="logo.png">
 </head>
 <body class = "body" style ="background-color:rgb(63, 192, 235);">
 
