@@ -1,8 +1,8 @@
 .body {
-    /*width: 100%;
-    height: 100%;*/
+
 }
 
+/* Large labels, like DiscSync */
 .h1 {
     text-align: center;
     font-family: Arial;
@@ -10,6 +10,7 @@
     margin-top: 10%;
 }
 
+/* Small labels, like matchID */
 .h2 {
     text-align: center;
     font-family: Arial;
@@ -17,6 +18,7 @@
     font-size: 20px;
 }
 
+/* All buttons */
 .button {
     border: none;
     color: white;
@@ -32,6 +34,7 @@
     background-color:rgb(47, 126, 212)
 }
 
+/* Create and Join input fields */
 .input {
     border: none;
     padding: 15px 32px;
@@ -43,8 +46,9 @@
     width: 50%;
     margin: 15px auto auto;
 }
+
+/* Scoresheet input cells */
 .cell {
-    /*border: 2px solid white;*/
     border: none;
     text-align: center;
     text-decoration: none;
@@ -57,8 +61,8 @@
     color: white;
 }
 
+/* Table formatting */
 .table, .tr, .td, .th {
-    /*border: 2px solid white;*/
     padding: 10px;
     border: 2px solid white;
     border-collapse: collapse;

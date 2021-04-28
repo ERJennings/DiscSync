@@ -15,18 +15,24 @@ session_start();
 <h1 class = "h1"><b style="font-family: Arial"><i style ="color:white">Enter a Game ID</i></b></h1>
 
 <?php
+//This array helps prevent players from overwriting each other's data
 $_SESSION["oldMain"] = array();
 
 //Connect to DB
 $conn = new mysqli('discsync2.cyudrahusm5z.us-east-1.rds.amazonaws.com',
     'admin', '365DaOfAmTr', 'discsyncdb', '3306');
 
-//Form to get game ID
+//Get highest existing ID (all lower IDs will always exist
+$sqlmax = mysqli_query($conn, "SELECT MAX(matchID) AS max FROM `matches`;");
+$res = mysqli_fetch_array($sqlmax);
+$maxID = $res['max'];
+
+//Form to get ID of desired game
 echo "<html><body class = \"body\">
 
 <form join=\"join.php\" method=\"post\">
 
-    <input class = \"input\" type=\"number\" min=\"1\" name=\"id\" placeholder=\"Ex: 32\">
+    <input class = \"input\" type=\"number\" min=\"1\" max=\"$maxID\" name=\"id\" placeholder=\"Ex: 50\">
 
     <br> <p>
 
@@ -39,6 +45,7 @@ if (isset($_POST['id'])) {
     $gameID = $_POST['id'];
 
     //Set match ID in cookie
+    //The cookie is used so that the ID is retained if browser is closed and reopened
     $cookie_name = "DiscSyncMatchID";
     setcookie($cookie_name, $gameID, time() + (86400 * 30), "/"); // 86400 = 1 day
 
