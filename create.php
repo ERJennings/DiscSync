@@ -47,7 +47,7 @@ if (isset($_POST['players'])) {
     $sql = "INSERT INTO matches(matchID, numPlayers) VALUES(\"$nextID\", \"$num\")";
 
     if(mysqli_query($conn, $sql)){
-        echo "Starting match...";
+
     }
     else{
         echo "ERROR: Match database may be offline";
@@ -68,7 +68,7 @@ if (isset($_POST['players'])) {
         $nextPlayerID += 1;
         $sqlLoop = "INSERT INTO player(playerID, matchID, playerName) VALUES(\"$nextPlayerID\", \"$nextID\", \"$pName\")";
         if (mysqli_query($conn, $sqlLoop)) {
-            //echo $pName . "Added";
+
         }
         else {
             echo "ERROR: Match database may be offline";
@@ -80,7 +80,7 @@ if (isset($_POST['players'])) {
     $cookie_name = "DiscSyncMatchID";
     setcookie($cookie_name, $nextID, time() + (86400 * 30), "/"); // 86400 = 1 day
 
-    //$conn->close();
+    $conn->close();
 
     header("Location: scoresheet.php");
 

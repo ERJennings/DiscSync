@@ -44,24 +44,10 @@ $playerIDArray = array_column($scoreData, 'playerID');
 
 //Populate array that will be used to populate scorecard
 $mainArray[0]= array_column($scoreData, 'playerName');
-$mainArray[1] = array_column($scoreData, 'score1');
-$mainArray[2] = array_column($scoreData, 'score2');
-$mainArray[3] = array_column($scoreData, 'score3');
-$mainArray[4] = array_column($scoreData, 'score4');
-$mainArray[5] = array_column($scoreData, 'score5');
-$mainArray[6] = array_column($scoreData, 'score6');
-$mainArray[7] = array_column($scoreData, 'score7');
-$mainArray[8] = array_column($scoreData, 'score8');
-$mainArray[9] = array_column($scoreData, 'score9');
-$mainArray[10] = array_column($scoreData, 'score10');
-$mainArray[11] = array_column($scoreData, 'score11');
-$mainArray[12] = array_column($scoreData, 'score12');
-$mainArray[13] = array_column($scoreData, 'score13');
-$mainArray[14] = array_column($scoreData, 'score14');
-$mainArray[15] = array_column($scoreData, 'score15');
-$mainArray[16] = array_column($scoreData, 'score16');
-$mainArray[17] = array_column($scoreData, 'score17');
-$mainArray[18] = array_column($scoreData, 'score18');
+for ($i = 1; $i <= 18; $i++) {
+    $scoreName = "score" . $i;
+    $mainArray[$i] = array_column($scoreData, $scoreName);
+}
 
 //Store main array in session variable
 //Will be used when checking to see if cell has been changed and prevent overwriting
@@ -239,7 +225,6 @@ if (isset($_POST['submit'])) {
     //Retrieve old values for comparison
     $tempArray = $_SESSION['oldMain'];
 
-
     //Check name values to see if any have changed, if so update them
     for ($x = 0; $x < $numPlayers; $x++) {
         $currentNum = $x + 1;
@@ -249,9 +234,9 @@ if (isset($_POST['submit'])) {
         if ($currentData != $tempArray[0][$x+1]) {
             $nameString = "UPDATE player SET playerName='$currentData' WHERE playerID=$currentPlayer";
             if ($conn->query($nameString) == TRUE) {
-                //echo "Record updated successfully";
+
             } else {
-                echo "Error updating record: " . $conn->error;
+                echo "ERROR: Match database may be offline";
             }
         }
     }
@@ -276,9 +261,9 @@ if (isset($_POST['submit'])) {
                 $scoreString = "UPDATE player SET $holeName=$currentData WHERE playerID=$currentPlayer";
 
                 if ($conn->query($scoreString) == TRUE) {
-                    //echo "Record updated successfully";
+
                 } else {
-                    echo "Error updating record: " . $conn->error;
+                    echo "ERROR: Match database may be offline";
                 }
             }
         }
@@ -286,6 +271,8 @@ if (isset($_POST['submit'])) {
 
     //Set session variable to current data for later comparison
     $_SESSION['oldMain'] = $mainArray;
+
+    $conn->close();
 
     //Refresh the page to populate table with current scores
     $URL="scoresheet.php";

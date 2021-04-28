@@ -49,7 +49,7 @@ if (isset($_POST['id'])) {
     $cookie_name = "DiscSyncMatchID";
     setcookie($cookie_name, $gameID, time() + (86400 * 30), "/"); // 86400 = 1 day
 
-    //$conn->close();
+    $conn->close();
 
     header("Location: scoresheet.php");
 
